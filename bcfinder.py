@@ -42,12 +42,12 @@ class BackgroundColorDetector():
         self.twenty_most_common()
         self.percentage_of_first = (float(self.number_counter[0][1])/self.total_pixels)
         print(self.percentage_of_first)
-        if self.percentage_of_first &amp;gt; 0.5:
+        if self.percentage_of_first > 0.5:
             print("Error")
         else:
             self.average_colour()
  
-if __name__ == &quot;__main__&quot;:
+if __name__ ==__main__:
     if (len(sys.argv) != 2):                        # Checks if image was given as cli argument
         print("Error")
     else:
