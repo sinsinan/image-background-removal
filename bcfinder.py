@@ -47,7 +47,7 @@ class BackgroundColorDetector():
         else:
             self.average_colour()
  
-if __name__ ==__main__:
+if __name__ == "__main__":
     if (len(sys.argv) != 2):                        # Checks if image was given as cli argument
         print("Error")
     else:
