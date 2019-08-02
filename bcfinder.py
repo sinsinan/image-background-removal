@@ -30,26 +30,26 @@ class BackgroundColorDetector():
         average_red = red / sample
         average_green = green / sample
         average_blue = blue / sample
-        print &quot;Average RGB for top ten is: (&quot;, average_red, &quot;, &quot;, average_green, &quot;, &quot;, average_blue, &quot;)&quot;
+        print("Error")
  
     def twenty_most_common(self):
         self.count()
         self.number_counter = Counter(self.manual_count).most_common(20)
         for rgb, value in self.number_counter:
-            print rgb, value, ((float(value)/self.total_pixels)*100)
+            print(rgb, value, ((float(value)/self.total_pixels)*100))
  
     def detect(self):
         self.twenty_most_common()
         self.percentage_of_first = (float(self.number_counter[0][1])/self.total_pixels)
-        print self.percentage_of_first
+        print(self.percentage_of_first)
         if self.percentage_of_first &amp;gt; 0.5:
-            print &quot;Background color is &quot;, self.number_counter[0][0]
+            print("Error")
         else:
             self.average_colour()
  
 if __name__ == &quot;__main__&quot;:
     if (len(sys.argv) != 2):                        # Checks if image was given as cli argument
-        print &quot;error: syntax is 'python main.py /example/image/location.jpg'&quot;
+        print("Error")
     else:
         BackgroundColor = BackgroundColorDetector(sys.argv[1])
         BackgroundColor.detect()
