@@ -11,8 +11,8 @@ class BackgroundColorDetector():
         self.total_pixels = self.w*self.h
  
     def count(self):
-        for y in xrange(0, self.h):
-            for x in xrange(0, self.w):
+        for y in range(0, self.h):
+            for x in range(0, self.w):
                 RGB = (self.img[x,y,2],self.img[x,y,1],self.img[x,y,0])
                 if RGB in self.manual_count:
                     self.manual_count[RGB] += 1
@@ -22,7 +22,7 @@ class BackgroundColorDetector():
     def average_colour(self):
         red = 0; green = 0; blue = 0;
         sample = 10
-        for top in xrange(0, sample):
+        for top in range(0, sample):
             red += self.number_counter[top][0][0]
             green += self.number_counter[top][0][1]
             blue += self.number_counter[top][0][2]
