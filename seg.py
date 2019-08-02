@@ -68,9 +68,9 @@ def drawSegment(baseImg, matImg):
                 color = matImg[y,x]
                 (r,g,b) = baseImg.getpixel((x,y))
                 if color == 0:
-                    dummyImg[y,x,3] = 0
+                    dummyImg[y,x,3] = [r,g,b,255]
                 else :
-                    dummyImg[y,x] = [r,g,b,255]
+                    dummyImg[y,x] = 0
   img = Image.fromarray(dummyImg)
   img.save(outputFilePath)
 
